@@ -18,21 +18,35 @@ btnSubmit.onclick = function () {
         msgUsername.classList.remove("danger-text");
         msgUsername.classList.add("success-text");
     }
-    var txtEmail = document.forms["register-form"]["email"];
-    var msgEmail = txtEmail.nextElementSibling;
-    var valueTxtEmail = txtEmail.value
-    if (txtEmail == null || txtEmail.value.length == 0) {
-        msgEmail.innerHTML = "* Vui lòng nhập email";
-        msgEmail.classList.remove("hidden-text");
+    var txtemail = document.forms["register-form"]["email"];
+    var msgemail = txtemail.nextElementSibling;
+    var valuetxtemail = txtemail.value;
+    if (txtemail == null || txtemail.value.length == 0) {
+        msgemail.innerHTML = "* Vui lòng nhập email";
+        msgemail.classList.remove("hidden-text");
+        msgemail.classList.add("danger-text");
     } else {
-        if (valueTxtEmail.search('@') == -1) {
-            msgEmail.innerHTML = "* Email không hợp lệ";
-            msgEmail.classList.remove("hidden-text");
+        if (valuetxtemail.search('@') == -1) {
+            msgemail.innerHTML = "* Email không hợp lệ";
+            msgemail.classList.remove("hidden-text");
+            msgemail.classList.add("danger-text");
         } else {
-            msgEmail.innerHTML = "* Email hợp lệ";
-            msgEmail.classList.remove("hidden-text");
-            msgEmail.classList.remove("danger-text");
-            msgEmail.classList.add("success-text");
+            msgemail.innerHTML = "* Email hợp lệ";
+            msgemail.classList.remove("hidden-text");
+            msgemail.classList.remove("danger-text");
+            msgemail.classList.add("success-text");
         }
+    }
+    var txtphone = document.forms["register-form"]["phone"];
+    var msgphone = txtphone.nextElementSibling;
+    if (txtphone == null || txtphone.value.length == 0) {
+        msgphone.innerHTML = "* Vui lòng nhập số điện thoại";
+        msgphone.classList.remove("hidden-text");
+        msgphone.classList.add("danger-text");
+    } else {
+        msgphone.innerHTML = "* Số điện thoại hợp lệ";
+        msgphone.classList.remove("hidden-text");
+        msgphone.classList.remove("danger-text");
+        msgphone.classList.add("success-text");
     }
 }
